@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Insights | Smart Electoral Assistant</title>
+    <meta name="description" content="An advanced AI assistant that explains election processes in a clear, structured, and interactive way.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Markdown Parser (Marked.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animated">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="bg-shape shape-3"></div>
+    </div>
+
+    <div class="app-container glass-container">
+        <!-- Sidebar / Config Area -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i data-lucide="vote" class="logo-icon"></i>
+                    <h1>Election Insights</h1>
+                </div>
+                <p class="subtitle">Your Neutral Electoral Guide</p>
+            </div>
+
+            <div class="suggestions-panel">
+                <h3>Try asking about:</h3>
+                <div class="suggestion-chips">
+                    <button class="chip" data-prompt="Explain the difference between FPTP and Proportional Representation systems.">FPTP vs PR</button>
+                    <button class="chip" data-prompt="How does the Electoral College work? Please give a step-by-step breakdown.">Electoral College</button>
+                    <button class="chip" data-prompt="What is the general timeline of an election from announcement to results?">Election Timeline</button>
+                    <button class="chip" data-prompt="Can you give me a simple guide on how to register to vote?">How to Vote Guide</button>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="status-indicator connected" id="api-status">
+                    <span class="dot"></span>
+                    <span class="status-text">Server Connected</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <!-- Header -->
+            <header class="chat-header">
+                <div class="header-info">
+                    <h2>Electoral Assistant</h2>
+                    <span class="badge neutral">Strictly Neutral</span>
+                </div>
+                <div class="header-actions">
+                    <button id="clear-chat" class="icon-button" title="Clear Conversation">
+                        <i data-lucide="trash-2"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Chat History -->
+            <div class="chat-history" id="chat-history">
+                <!-- Welcome Message -->
+                <div class="message assistant-message welcome-message">
+                    <div class="avatar">
+                        <i data-lucide="bot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Welcome! Choose what you want:</p>
+                        <ol>
+                            <li>Learn step-by-step</li>
+                            <li>Take a quiz</li>
+                            <li>Try a real voting scenario</li>
+                            <li>Compare election systems</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area glass-panel-bottom">
+                <div class="input-container glass-input">
+                    <textarea 
+                        id="user-input" 
+                        placeholder="Ask about election processes, systems, or voting... (Press Enter to send)"
+                        rows="1"
+                    ></textarea>
+                    <button id="send-button" class="primary-button icon-only" title="Send Message" disabled>
+                        <i data-lucide="send"></i>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <p>Responses are educational and strictly neutral. Do not rely on this for official legal guidance.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.v2.js"></script>
+</body>
+</html>
